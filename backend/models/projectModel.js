@@ -1,7 +1,13 @@
 import mongoose from "mongoose";
+import User from "../models/userModel.js";
 
 
 const projectSchema = mongoose.Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'User'
+    },
     name: {
         type: String,
         required: true,
