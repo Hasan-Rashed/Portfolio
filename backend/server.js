@@ -21,7 +21,7 @@ app.use(cookieParser()); // to accept cookies in the browser
 
 app.use('/api/users', userRoutes);
 
-app.use('/api', projectRoutes);
+app.use('/api/projects', projectRoutes);
 
 // setting for production
 // check if node environment is in production mode
