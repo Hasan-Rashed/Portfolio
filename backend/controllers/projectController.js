@@ -52,11 +52,10 @@ const setProject = asyncHandler(async (req, res) => {
 
 
 
-// @desc    Get Project
+// @desc    Get all Projects
 // @route   GET /api/projects
 // @access  Public
 const getAllProjects = asyncHandler(async (req, res) => { // we can access the project by req.project because of the protect middleware
-    // console.log(req.project);
     const project = await Project.find();
     
     res.status(200).json(project); // 200 means ok
