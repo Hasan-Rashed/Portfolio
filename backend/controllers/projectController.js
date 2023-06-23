@@ -62,7 +62,22 @@ const getAllProjects = asyncHandler(async (req, res) => { // we can access the p
 });
 
 
+
+// @desc    Get single Project
+// @route   GET /api/projects/:id
+// @access  Public
+const getSingleProject = asyncHandler(async (req, res) => { // we can access the project by req.project because of the protect middleware
+    // find the id of the project by req.params.id
+    const project = await Project.findById(req.params.id);
+    
+    res.status(200).json(project); // 200 means ok
+});
+
+
+
+
 export { 
     setProject,
-    getAllProjects
+    getAllProjects,
+    getSingleProject
 };
