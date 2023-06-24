@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import { setProject, getAllProjects, getSingleProject } from '../controllers/projectController.js';
+import { setProject, getAllProjects, getSingleProject, updateProject } from '../controllers/projectController.js';
 import { protect } from '../middleware/authMiddleware.js';
 
 
@@ -12,7 +12,7 @@ router.route('/')
 // /api/projects/ +
 router.route('/:id')
     .get(getSingleProject)
-    // .put(protect, updateProject)
+    .put(protect, updateProject)
     // .delete(protect, deleteProject);
 
 export default router;

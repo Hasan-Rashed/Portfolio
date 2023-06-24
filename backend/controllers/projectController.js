@@ -95,9 +95,40 @@ const getSingleProject = asyncHandler(async (req, res) => { // we can access the
 
 
 
+// @desc    Update project
+// @route   PUT /api/projects/:id
+// @access  Private
+const updateProject = asyncHandler(async (req, res) => {
+    // find the id of the project by req.params.id
+    const project = await Project.findById(req.params.id);
+    // console.log(req.params.id);
+
+    if(!project){
+        res.status(400)
+        throw new Error('Project not found')
+    }
+
+    // since updateProject is a protected route, we can access the req.user._id from the protect middleware and assign to user
+    const user = await User.findById(req.user._id).select('-password'); // we can access the req.user._id because of the protect middleware. .select('-password') is to exclude the password from the user object
+
+    // check for user
+    if(!user){
+        res.status(401) // 401 is unauthorized
+        throw new Error('User not found')
+    }
+
+    // update the project
+    const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, {new: true})
+
+    res.status(200).json({ 
+        success: true, 
+        updatedProject
+    })
+})
+
 export { 
     setProject,
     getAllProjects,
     getSingleProject,
-    // updateProject
+    updateProject
 };
