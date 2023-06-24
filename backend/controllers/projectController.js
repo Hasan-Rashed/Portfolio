@@ -10,11 +10,9 @@ import jwt from 'jsonwebtoken';
 // @access  Public
 const setProject = asyncHandler(async (req, res) => {
 
-    let _id;
-    
     const { name, category, description, clientName, technology, liveLink, githubLink, image } = req.body;
 
-    // find project by email in the database
+    // find if project exists by name in the database
     const projectExists = await Project.findOne({ name });
     
     // check if project exists
@@ -24,31 +22,20 @@ const setProject = asyncHandler(async (req, res) => {
     }
 
 
-    // get token from the cookie
-    let token = req.cookies.jwt; // get token from the cookie
-
-    // check if token exists
-    if(token){
-        try {
-            // const decoded = jwt.verify(token, process.env.JWT_SECRET); // decode the token, decoded is an object. token is from the cookie
-            const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-            
-            // Get the user ID from the token.
-            _id = decodedToken.userId; // userId is the currently logged in user id, accessing from the cookie of jwt
-
-        } catch (error) {
-            res.status(401); // 401 means unauthorized
-            throw new Error('Unauthorized access, invalid token');
-        }
-    }else{
-        res.status(401); // 401 means unauthorized
-        throw new Error('Unauthorized access, no token');
-    }
+    // since setProject is a protected route, we can access the req.user._id from the protect middleware and assign to user
+    const user = await User.findById(req.user._id).select('-password'); // we can access the req.user._id because of the protect middleware. .select('-password') is to exclude the password from the user object
+    // console.log(user._id);
     
+    // check for user
+    if(!user){
+        res.status(401) // 401 is unauthorized
+        throw new Error('User not found')
+    }
+
     
     // create project in the database 
     const project = await Project.create({ 
-        user: _id, // user field on Project model relationship to User model to create project
+        user: user._id, // user field on Project model relationship to User model to create project
         name, 
         category, 
         description, 
@@ -111,6 +98,7 @@ const updateProject = asyncHandler(async (req, res) => {
     // since updateProject is a protected route, we can access the req.user._id from the protect middleware and assign to user
     const user = await User.findById(req.user._id).select('-password'); // we can access the req.user._id because of the protect middleware. .select('-password') is to exclude the password from the user object
 
+    console.log(user._id);
     // check for user
     if(!user){
         res.status(401) // 401 is unauthorized

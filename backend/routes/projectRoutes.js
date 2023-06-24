@@ -6,7 +6,7 @@ import { protect } from '../middleware/authMiddleware.js';
 
 // /api/projects/ +
 router.route('/')
-    .post(setProject)
+    .post(protect, setProject)
     .get(getAllProjects);
 
 // /api/projects/ +
