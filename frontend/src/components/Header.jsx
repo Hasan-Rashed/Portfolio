@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap'
 import { useLogoutMutation } from '../slices/usersApiSlice';
-import { logout } from '../slices/authSlice'
+import { clearCredentials } from '../slices/authSlice'
 
 const Header = () => {
     // get the user data or the `userInfo` state from the Redux store. if userInfo is not null, then the user is already logged in and we can redirect them to the home page.
@@ -21,7 +21,7 @@ const Header = () => {
     const logoutHandler = async () => {
         try {
             await logoutApiCall().unwrap(); // make request and destroy the cookie
-            dispatch(logout()); // dispatch the logout action to clear the local storage
+            dispatch(clearCredentials()); // dispatch the logout action to clear the local storage
             navigate('/');
         } catch (error) {
             console.log(error);

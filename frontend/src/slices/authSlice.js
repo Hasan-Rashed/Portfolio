@@ -20,7 +20,7 @@ const authSlice = createSlice({
             // set data to localStorage
             localStorage.setItem('userInfo', JSON.stringify(action.payload)) // JSON.stringify() converts a JavaScript object to a string
         },
-        logout: (state, action) => { // logout is an action creator
+        clearCredentials: (state, action) => { // setCredentials is an action creator
             // clearing data from state
             state.userInfo = null; // set userInfo to null to log out
             // clearing data from localStorage
@@ -30,8 +30,10 @@ const authSlice = createSlice({
 });
 
 
-export const { setCredentials, logout } = authSlice.actions;
+// when we call setCredentials(in login screen), clearCredentials(in logout screen) that's an action
+export const { setCredentials, clearCredentials } = authSlice.actions;
 
+// when it changes state that's  the reducer.
 export default authSlice.reducer;
 
 // when you call it is action, when it changes state it is reducer
