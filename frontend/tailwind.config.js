@@ -21,7 +21,7 @@ export default {
         magicBlue: "#00f6ff",
       },
       fontFamily: { 
-        sans: ['Helvetica', 'Arial', 'sans-serif'], 
+        sans: ['Inter var', 'Arial', 'sans-serif'], 
         serif: ['Georgia', 'serif'], mono: ['Menlo', 'Monaco', 'monospace']
       }
     },

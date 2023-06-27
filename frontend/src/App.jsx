@@ -1,17 +1,43 @@
-import { Outlet } from "react-router-dom"
-import { Container } from "react-bootstrap"
-import Header from "./components/Header"
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { Outlet } from "react-router-dom"
+// import { Container } from "react-bootstrap"
+// import Header from "./components/Header"
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
-const App = () => {
+// const App = () => {
+//   return (
+//     <>
+//       <Header />
+//       <ToastContainer />
+//       <Container className="my-2" >
+//         <Outlet />
+//       </Container>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import HomeScreen from './screens/HomeScreen'
+import AboutScreen from './screens/AboutScreen'
+import ProjectsScreen from './screens/ProjectsScreen'
+import ContactScreen from './screens/ContactScreen'
+
+
+function App() {
+
   return (
     <>
-      <Header />
-      <ToastContainer />
-      <Container className="my-2" >
-        <Outlet />
-      </Container>
+      <Router>
+        <Routes>
+          <Route index={true} path="/" element={<HomeScreen />} />
+          <Route path="/about" element={<AboutScreen />} />
+          <Route path="/projects" element={<ProjectsScreen />} />
+          <Route path="/contact" element={<ContactScreen />} />
+        </Routes>
+      </Router>
     </>
   )
 }
