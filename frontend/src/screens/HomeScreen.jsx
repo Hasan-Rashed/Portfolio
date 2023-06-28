@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
@@ -6,6 +7,16 @@ import PageProgress from 'react-page-progress'
 
 
 const HomeScreen = () => {
+  useEffect(() => {
+    const handleContextmenu = e => {
+        e.preventDefault()
+    }
+    document.addEventListener('contextmenu', handleContextmenu)
+    return function cleanup() {
+        document.removeEventListener('contextmenu', handleContextmenu)
+    }
+}, [ ])
+
   return (
     <>
         <PageProgress color={'skyblue'} height={4} />
