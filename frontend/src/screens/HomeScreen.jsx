@@ -7,6 +7,7 @@ import PageProgress from 'react-page-progress'
 
 
 const HomeScreen = () => {
+  // Disable right click on the page
   useEffect(() => {
     const handleContextmenu = e => {
         e.preventDefault()
