@@ -24,6 +24,7 @@ import HomeScreen from './screens/HomeScreen'
 import AboutScreen from './screens/AboutScreen'
 import ProjectsScreen from './screens/ProjectsScreen'
 import ContactScreen from './screens/ContactScreen'
+import PageNotFound from './screens/PageNotFound'
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/about" element={<AboutScreen />} />
           <Route path="/projects" element={<ProjectsScreen />} />
           <Route path="/contact" element={<ContactScreen />} />
+          <Route path='*' element={<PageNotFound />} />
         </Routes>
       </Router>
     </>

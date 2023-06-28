@@ -1,20 +1,17 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo1.svg';
-import HomeIcon from '@mui/icons-material/Home';
-import InfoIcon from '@mui/icons-material/Info';
-import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
-import { GoProjectSymlink } from 'react-icons/go';
 import rashedImg from '../assets/rashed.png';
 
 
 const navigation = [
-  { name: 'Home', href: '/', icon: <HomeIcon />, current: true },
-  { name: 'About', href: '/about', icon: <InfoIcon />, current: false },
-  { name: 'Projects', href: '/projects', icon: <GoProjectSymlink />, current: false },
-  { name: 'Contact', href: '/contact', icon: <ConnectWithoutContactIcon />, current: false },
+  { name: 'HOME', to: '/', current: true },
+  { name: 'ABOUT', to: '/about', current: false },
+  { name: 'PROJECTS', to: '/projects', current: false },
+  { name: 'CONTACT', to: '/contact', current: false },
+  { name: 'ADMIN LOGIN', to: '/', current: false },
 ];
 
 
@@ -24,7 +21,7 @@ function classNames(...classes) {
 
 export default function Header() {
   return (
-    <div className="bg-gray-800">
+    <div className="bg-gray-800 sticky top-0 z-50 shadow">
         <div className="container mx-auto">
             <Disclosure as="nav">
                 {({ open }) => (
@@ -67,7 +64,6 @@ export default function Header() {
                                 {navigation.map((item) => (
                                 <a
                                     key={item.name}
-                                    // href={item.href}
                                     className={classNames(
                                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                     'rounded-md px-3 py-2 text-sm font-medium'
@@ -75,7 +71,7 @@ export default function Header() {
                                     aria-current={item.current ? 'page' : undefined}
                                 >
                                     
-                                    <Link to={item.href} >{item.name}</Link> 
+                                    <Link to={item.to} >{item.name}</Link> 
 
                                 </a>
                                 ))}
@@ -109,10 +105,9 @@ export default function Header() {
                                 <Menu.Item>
                                     {({ active }) => (
                                     <a
-                                        href="#"
                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                     >
-                                        Your Profile
+                                        <Link to='/profile'>Your Profile</Link>
                                     </a>
                                     )}
                                 </Menu.Item>
@@ -129,10 +124,9 @@ export default function Header() {
                                 <Menu.Item>
                                     {({ active }) => (
                                     <a
-                                        href="#"
                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                     >
-                                        Sign out
+                                        <Link to='/logout'>Sign out</Link>
                                     </a>
                                     )}
                                 </Menu.Item>
