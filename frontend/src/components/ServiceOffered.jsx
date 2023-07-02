@@ -3,7 +3,7 @@ import CardContent from '@mui/material/CardContent';
 import responsive from '../assets/service icons/responsive.svg';
 import ecommerce from '../assets/service icons/ecommerce.svg';
 import html5 from '../assets/service icons/html5.svg';
-import Jello from 'react-reveal/Jello';
+import HeadShake from 'react-reveal/HeadShake';
 
 
 const ServiceOffered = () => {
@@ -27,7 +27,7 @@ const ServiceOffered = () => {
                 cardMaterial.map((item, index) => (
 
                     <div key={index}>
-                    <Jello>
+                    <HeadShake>
                     <Card className='shadow-lg bg-white hover:shadow-xl transition duration-300 px-2 h-96'>
                         <CardContent>
                             <img src={item.img} className='w-24 mx-auto py-3' alt="card img" />
@@ -35,7 +35,7 @@ const ServiceOffered = () => {
                             <p className='text-gray-800 py-2 opacity-95'>{item.p}</p>
                         </CardContent>
                     </Card>
-                    </Jello>
+                    </HeadShake>
                 </div>
                 ))
             }
