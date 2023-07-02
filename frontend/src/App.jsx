@@ -28,6 +28,8 @@ import PageNotFound from './screens/PageNotFound'
 import { useEffect } from 'react'
 import ScrollToTop from 'react-scroll-up'
 import up from './assets/up.svg';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -45,6 +47,9 @@ function App() {
 
   return (
     <>
+      <ToastContainer />
+
+
       <Router>
         <Routes>
           <Route index={true} path="/" element={<HomeScreen />} />
