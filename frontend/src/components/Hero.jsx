@@ -4,7 +4,7 @@ import developer from '../assets/developer activity.svg'
 
 const Hero = () => {
   return (
-    <div className=' bg-slate-200' >
+    <div className=' bg-slate-200 select-none' >
         <div className="container px-3 mx-auto py-10 text-center items-center justify-center sm:h-80vh md:h-60vh lg:h-40vh xl:h-20vh">
                 <h1 className="text-2xl md:text-4xl font-bold py-5 text-gray-800 uppercase">I'm <span className='text-blue-500'>Kamrul Hasan Rashed</span></h1>
         

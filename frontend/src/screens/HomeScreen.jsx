@@ -7,20 +7,10 @@ import PageProgress from 'react-page-progress'
 
 
 const HomeScreen = () => {
-  // Disable right click on the page
-  useEffect(() => {
-    const handleContextmenu = e => {
-        e.preventDefault()
-    }
-    document.addEventListener('contextmenu', handleContextmenu)
-    return function cleanup() {
-        document.removeEventListener('contextmenu', handleContextmenu)
-    }
-}, [ ])
 
   return (
     <>
-        <PageProgress color={'skyblue'} height={4} />
+        <PageProgress color={'skyblue'} height={3} />
         <Header />
         <Hero />
         <Services />

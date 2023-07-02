@@ -5,10 +5,10 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer = () => {
   return (
-    <div className=" bg-gray-800 py-5 px-3">
+    <div className=" bg-gray-800 py-3 px-3 select-none">
         <footer className="container mx-auto text-center items-center flex-col md:flex-row justify-around">
             <div>
-                <p className="text-white py-4">&copy; 2023 All Rights Reserved. Created by Hasan Rashed.</p>
+                <p className="text-white py-2">&copy; 2023 All Rights Reserved. Created by Hasan Rashed.</p>
             </div>
 
             <div className="flex justify-center">

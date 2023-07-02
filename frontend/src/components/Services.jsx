@@ -8,7 +8,7 @@ import Fade from 'react-reveal/Fade';
 const Services = () => {
   return (
     <div>
-        <div className="container mx-auto items-center justify-center py-10 px-3 grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="container mx-auto items-center justify-center py-10 px-3 grid grid-cols-1 md:grid-cols-3 gap-5 select-none">
             <div className='py-3 text-gray-800 md:col-span-3'>
                 <h1 className='text-2xl md:text-3xl font-bold text-center'>Core Services</h1>
                 <p className='text-lg md:text-md text-center py-2 opacity-80'>I can cooperate with the following services.</p>

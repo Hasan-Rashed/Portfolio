@@ -25,9 +25,21 @@ import AboutScreen from './screens/AboutScreen'
 import ProjectsScreen from './screens/ProjectsScreen'
 import ContactScreen from './screens/ContactScreen'
 import PageNotFound from './screens/PageNotFound'
+import { useEffect } from 'react'
 
 
 function App() {
+
+  // Disable right click on the page
+  useEffect(() => {
+    const handleContextmenu = e => {
+        e.preventDefault()
+    }
+    document.addEventListener('contextmenu', handleContextmenu)
+    return function cleanup() {
+        document.removeEventListener('contextmenu', handleContextmenu)
+    }
+}, [ ])
 
   return (
     <>

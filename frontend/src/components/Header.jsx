@@ -21,7 +21,7 @@ function classNames(...classes) {
 
 export default function Header() {
   return (
-    <div className="bg-gray-800 sticky top-0 z-50 shadow">
+    <div className="bg-gray-800 sticky top-0 z-50 shadow select-none">
         <div className="container mx-auto">
             <Disclosure as="nav">
                 {({ open }) => (
@@ -142,15 +142,16 @@ export default function Header() {
                         {navigation.map((item) => (
                             <Disclosure.Button
                             key={item.name}
-                            as="a"
-                            href={item.href}
+                            // as="a"
+                            // href={item.href}
                             className={classNames(
                                 item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                 'block rounded-md px-3 py-2 text-base font-medium'
                             )}
                             aria-current={item.current ? 'page' : undefined}
                             >
-                            {item.name}
+                                {/* {item.name} */}
+                                <Link to={item.to} >{item.name}</Link> 
                             </Disclosure.Button>
                         ))}
                         </div>
