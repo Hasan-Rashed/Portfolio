@@ -26,6 +26,8 @@ import ProjectsScreen from './screens/ProjectsScreen'
 import ContactScreen from './screens/ContactScreen'
 import PageNotFound from './screens/PageNotFound'
 import { useEffect } from 'react'
+import ScrollToTop from 'react-scroll-up'
+import up from './assets/up.svg';
 
 
 function App() {
@@ -52,6 +54,15 @@ function App() {
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </Router>
+
+
+
+      {/* scroll to top component */}
+      <ScrollToTop showUnder={160}>
+                <div className='w-8 shadow-xl'>
+                    <img src={up} alt="scroll to top" />
+                </div>
+      </ScrollToTop>
     </>
   )
 }
