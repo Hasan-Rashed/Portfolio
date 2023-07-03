@@ -30,6 +30,8 @@ import ScrollToTop from 'react-scroll-up'
 import up from './assets/up.svg';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ProfileScreen from './screens/ProfileScreen';
+import PrivateRoute from './components/PrivateRoute';
 
 
 function App() {
@@ -57,6 +59,11 @@ function App() {
           <Route path="/projects" element={<ProjectsScreen />} />
           <Route path="/contact" element={<ContactScreen />} />
           <Route path='*' element={<PageNotFound />} />
+
+          {/* Private Routes */}
+          <Route path='' element={<PrivateRoute />}>
+            <Route path="/profile" element={<ProfileScreen />} /> {/* this is a private route */}
+          </Route>
         </Routes>
       </Router>
 
