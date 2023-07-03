@@ -1,18 +1,18 @@
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import PageProgress from 'react-page-progress'
-import Projects from "../components/Projects"
+import CreateProject from "../components/CreateProject"
 
 
-const ProjectsScreen = () => {
+const CreateProjectScreen = () => {
   return (
     <div>
-      <PageProgress color={'skyblue'} height={3} />
+        <PageProgress color={'skyblue'} height={3} />
         <Header />
-        <Projects />
+        <CreateProject />
         <Footer />
     </div>
   )
 }
 
-export default ProjectsScreen
+export default CreateProjectScreen;

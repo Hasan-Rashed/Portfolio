@@ -32,6 +32,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProfileScreen from './screens/ProfileScreen';
 import PrivateRoute from './components/PrivateRoute';
+import CreateProjectScreen from './screens/CreateProjectScreen'
 
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
           {/* Private Routes */}
           <Route path='' element={<PrivateRoute />}>
             <Route path="/profile" element={<ProfileScreen />} /> {/* this is a private route */}
+            <Route path="/createProject" element={<CreateProjectScreen />} /> {/* this is a private route */}
           </Route>
         </Routes>
       </Router>

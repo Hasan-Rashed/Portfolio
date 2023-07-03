@@ -7,6 +7,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import AddIcon from '@mui/icons-material/Add';
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo1.svg";
@@ -159,13 +160,24 @@ export default function Header() {
                               <Menu.Item>
                                 {({ active }) => (
                                   <a
-                                    href="#"
                                     className={classNames(
                                       active ? "bg-gray-100" : "",
                                       "block px-4 py-2 text-sm text-gray-700"
                                     )}
                                   >
-                                    Settings
+                                    <Link
+                                      // onClick={logoutHandler}
+                                      to='/createProject'
+                                    >
+                                          {/* loader for logout */}
+                                        {isLoading && (
+                                          <WaveLoading
+                                            color="#0080FF"
+                                            size="large"
+                                          />
+                                        )}
+                                      Create Project <AddIcon />
+                                    </Link>
                                   </a>
                                 )}
                               </Menu.Item>
@@ -181,17 +193,18 @@ export default function Header() {
                                       onClick={logoutHandler}
                                       className="text-primary"
                                     >
+                                          {/* loader for logout */}
+                                        {isLoading && (
+                                          <WaveLoading
+                                            color="#0080FF"
+                                            size="large"
+                                          />
+                                        )}
                                       Sign out <ExitToAppIcon />
                                     </Link>
-
-                                    {/* loader for logout */}
-                                    {isLoading && (
-                                      <WaveLoading
-                                        color="#0080FF"
-                                        size="large"
-                                      />
-                                    )}
                                   </a>
+
+                                    
                                 )}
                               </Menu.Item>
                             </Menu.Items>

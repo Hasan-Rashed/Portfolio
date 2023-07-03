@@ -4,6 +4,6 @@ const baseQuery = fetchBaseQuery({ baseUrl: '' }); // baseUrl is the url of the 
 
 export const apiSlice = createApi({
     baseQuery,
-    tagTypes: ['User', 'Projects'],
+    tagTypes: ['User', 'Project'],
     endpoints: (builder) => ({})
 });
