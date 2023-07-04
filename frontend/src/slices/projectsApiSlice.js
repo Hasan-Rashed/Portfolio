@@ -10,10 +10,18 @@ export const projectsApiSlice = apiSlice.injectEndpoints({
                 method: "POST",
                 body: data // data is the name, description, image url and other data
             }),
-    })
+        }),
+
+        getProjects: builder.query({
+        query: () => ({ 
+            url: `${PROJECTS_URL}`,
+            method: "GET",
+            }),
+        }),
 })
 });
 
 export const {
-    useCreateProjectMutation
+    useCreateProjectMutation,
+    useGetProjectsQuery,
 } = projectsApiSlice;

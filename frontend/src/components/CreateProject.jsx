@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useCreateProjectMutation } from '../slices/projectsApiSlice';
 import { useNavigate } from "react-router-dom";
 
+import { Select, Option } from "@material-tailwind/react";
 import { WaveLoading } from "react-loadingg";
 import { toast } from "react-toastify";
 
@@ -37,20 +38,23 @@ const submitHandler = async (e) => {
         await createProject({ name, category, description, clientName, technology, liveLink, githubLink, imageLink, image }).unwrap();
         // refetch();
         toast.success("Project created successfully");
+        navigate("/projects");
+
     } catch (err) {
         toast.error(err?.data?.message || err?.error);
     }
     }
 
 return (
-    <div className="container mx-auto py-10 w-96 px-5 border rounded-md shadow-2xl">
+    <div className="container mx-auto py-10 w-96 px-5 border rounded-md shadow-2xl select-none">
+
+        {/* loading component */}
+        { isLoading && <WaveLoading color='#0080FF' size='large' />}
+
+
         <h3 className="mb-4 text-xl font-medium text-center">
             Create Project
         </h3>
-
-        
-        {/* loading component */}
-        { isLoading && <WaveLoading color='#0080FF' size='large' />}
 
 
         <form onSubmit={submitHandler} className="space-y-6" action="#">
@@ -84,7 +88,7 @@ return (
                 type="text"
                 id="category"
                 className="text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="Enter category"
+                placeholder="'Front End', 'Full Stack', 'Web Design', 'Mobile App'"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 required
