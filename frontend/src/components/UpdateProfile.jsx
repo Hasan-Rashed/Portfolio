@@ -62,7 +62,7 @@ const handleButtonClick = () => {
 };
 
 return (
-    <div className="container mx-auto py-10 w-96 px-5 border rounded-md shadow-2xl">
+    <div className="container mx-auto py-10 w-96 px-5 border rounded-md shadow-2xl select-none">
         <h3 className="mb-4 text-xl font-medium text-center">
         Update Profile
         </h3>

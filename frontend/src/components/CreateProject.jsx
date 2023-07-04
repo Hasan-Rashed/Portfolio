@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useCreateProjectMutation } from '../slices/projectsApiSlice';
 import { useNavigate } from "react-router-dom";
 
-import { Select, Option } from "@material-tailwind/react";
 import { WaveLoading } from "react-loadingg";
 import { toast } from "react-toastify";
 
