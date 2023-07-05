@@ -48,8 +48,14 @@ return (
     <div className="container mx-auto py-10 w-96 px-5 border rounded-md shadow-2xl select-none">
 
         {/* loading component */}
-        { isLoading && <WaveLoading color='#0080FF' size='large' />}
-
+        { isLoading && 
+            <div className="flex items-center justify-center h-screen bg-opacity-50">
+                {/* Loader element */}
+                <div className="loader">
+                    <WaveLoading color='#0080FF' size='large' />
+                </div>
+            </div>
+        }
 
         <h3 className="mb-4 text-xl font-medium text-center">
             Create Project
