@@ -14,7 +14,6 @@ const [clientName, setClientName] = useState("");
 const [technology, setTechnology] = useState("");
 const [liveLink, setLiveLink] = useState("");
 const [githubLink, setGithubLink] = useState("");
-const [imageLink, setImageLink] = useState("");
 const [image, setImage] = useState("");
 
 
@@ -34,7 +33,7 @@ const submitHandler = async (e) => {
     e.preventDefault();
 
     try {
-        await createProject({ name, category, description, clientName, technology, liveLink, githubLink, imageLink, image }).unwrap();
+        await createProject({ name, category, description, clientName, technology, liveLink, githubLink, image }).unwrap();
         // refetch();
         toast.success("Project created successfully");
         navigate("/projects");
@@ -202,22 +201,10 @@ return (
                 id="image"
                 className="text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 placeholder="Enter image link"
-                value={imageLink}
-                onChange={(e) => setImageLink(e.target.value)}
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
                 required
                 />
-                </div>
-
-                <div>
-                    <label htmlFor="file-input" className="sr-only">Choose file</label>
-                    <input type="file" name="file-input" id="file-input" className="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
-                        file:bg-transparent file:border-0
-                        file:bg-gray-100 file:mr-4
-                        file:py-3 file:px-4
-                        dark:file:bg-gray-700 dark:file:text-gray-400"
-                        value={image}
-                        onChange={(e) => setImage(e.target.files[0])}
-                    />
                 </div>
 
             <button
