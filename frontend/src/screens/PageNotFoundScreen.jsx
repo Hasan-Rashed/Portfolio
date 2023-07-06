@@ -1,19 +1,18 @@
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import PageProgress from 'react-page-progress'
-import Table from "../components/Table";
+import PageNotFound from "../components/PageNotFound"
 
 
-const CRUDTable = () => {
+const AboutScreen = () => {
   return (
     <div>
         <PageProgress color={'skyblue'} height={3} />
         <Header />
-        <Table />
+        <PageNotFound />
         <Footer />
-
     </div>
   )
 }
 
-export default CRUDTable
+export default AboutScreen

@@ -24,7 +24,7 @@ import HomeScreen from './screens/HomeScreen'
 import AboutScreen from './screens/AboutScreen'
 import ProjectsScreen from './screens/ProjectsScreen'
 import ContactScreen from './screens/ContactScreen'
-import PageNotFound from './screens/PageNotFound'
+import PageNotFoundScreen from './screens/PageNotFoundScreen'
 import { useEffect } from 'react'
 import ScrollToTop from 'react-scroll-up'
 import up from './assets/up.svg';
@@ -33,7 +33,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ProfileScreen from './screens/ProfileScreen';
 import PrivateRoute from './components/PrivateRoute';
 import CreateProjectScreen from './screens/CreateProjectScreen'
-import CRUDTableScreen from './screens/CRUDTable'
+import CRUDTableScreen from './screens/CRUDTableScreen'
 import SingleProjectScreen from './screens/SingleProjectScreen'
 
 
@@ -62,7 +62,7 @@ function App() {
           <Route path="/projects" element={<ProjectsScreen />} />
           <Route path="/contact" element={<ContactScreen />} />
           <Route path="/projects/:id" element={<SingleProjectScreen />} />
-          <Route path='*' element={<PageNotFound />} />
+          <Route path='*' element={<PageNotFoundScreen />} />
 
           {/* Private Routes */}
           <Route path='' element={<PrivateRoute />}>
