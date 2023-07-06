@@ -80,8 +80,8 @@ const SingleProject = () => {
                     </div>
 
                     <div className='flex flex-col'>
-                        <Link to={`&{project?.liveLink}`} className='py-3 my-2 px-5 bg-blue-600 hover:bg-blue-800 text-white' ><LinkIcon /> Live Link</Link>
-                        <Link to={`&{project?.githubLink}`} className='py-3 my-2 px-3 bg-gray-600 hover:bg-gray-800 text-white' ><GitHubIcon /> Source Code</Link>
+                        <Link to={project?.liveLink} className='py-3 my-2 px-5 bg-blue-600 hover:bg-blue-800 text-white' ><LinkIcon /> Live Link</Link>
+                        <Link to={project?.githubLink} className='py-3 my-2 px-3 bg-gray-600 hover:bg-gray-800 text-white' ><GitHubIcon /> Source Code</Link>
                     </div>
             </div>
 
