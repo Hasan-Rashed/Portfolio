@@ -18,7 +18,7 @@ const navigate = useNavigate();
 const dispatch = useDispatch();
 
 
-// get user info from redux store
+// getting user info from the auth state in local storage
 const { userInfo } = useSelector((state) => state.auth);
 
 const [updateProfile, { isLoading }] = useUpdateUserMutation();
@@ -62,7 +62,7 @@ const handleButtonClick = () => {
 };
 
 return (
-    <div className="container mx-auto py-10 w-96 px-5 border rounded-md shadow-2xl select-none">
+    <div className="container px-5 py-10 mx-auto border rounded-md shadow-2xl select-none w-96">
         <h3 className="mb-4 text-xl font-medium text-center">
         Update Profile
         </h3>

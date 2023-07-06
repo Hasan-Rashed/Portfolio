@@ -36,7 +36,7 @@ export default function ModalLogin() {
   const [login, { isLoading }] = useLoginMutation();
 
 
-    // get user info from redux store
+    // getting user info from the auth state in local storage
   const { userInfo } = useSelector((state) => state.auth);
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export default function ModalLogin() {
   return (
     
     <div>
-      <button className='text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium' onClick={handleOpen}><LoginIcon/> ADMIN LOGIN</button>
+      <button className='px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white' onClick={handleOpen}><LoginIcon/> ADMIN LOGIN</button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -96,7 +96,7 @@ export default function ModalLogin() {
                             
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <div className="px-6 py-6 lg:px-8">
-                    <h3 className="mb-4 text-xl font-medium text-gray-900 dark:text-white text-center">Admin Login</h3>
+                    <h3 className="mb-4 text-xl font-medium text-center text-gray-900 dark:text-white">Admin Login</h3>
 
                       {/* loading component */}
                     { isLoading && <WaveLoading color='#0080FF' size='large' />}

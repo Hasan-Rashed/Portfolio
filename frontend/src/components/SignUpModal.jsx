@@ -38,7 +38,7 @@ export default function ModalLogin() {
   const [register, { isLoading }] = useRegisterMutation();
 
 
-    // get user info from redux store
+    // getting user info from the auth state in local storage
   const { userInfo } = useSelector((state) => state.auth);
 
   useEffect(() => {

@@ -15,7 +15,7 @@ export default function Projects() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    // user info from redux store
+    // getting user info from the auth state in local storage
     const { userInfo } = useSelector((state) => state.auth);
 
     // projects info from redux store
@@ -42,11 +42,11 @@ export default function Projects() {
                 </div>
             }
 
-            <div className='container mx-auto py-5 md:py-10 px-5 text-center items-center justify-center select-none gap-5'>
-                <div className='text-gray-800 pt-2 pb-5'>
-                    <h3 className='font-semibold text-xl'>My Projects</h3>
+            <div className='container items-center justify-center gap-5 px-5 py-5 mx-auto text-center select-none md:py-10'>
+                <div className='pt-2 pb-5 text-gray-800'>
+                    <h3 className='text-xl font-semibold'>My Projects</h3>
                     <p className='leading-3 opacity-80'>Recent Works</p>
-                    <p className='opacity-80 text-gray-800 py-5 text-justify md:text-center'>I built various typeof projects with Javascript, React, Redux, NodeJS, ExpressJS, MongoDB, MySQL, Firebase, Bootstrap, TailwindCSS, Material UI and so on.</p>
+                    <p className='py-5 text-justify text-gray-800 opacity-80 md:text-center'>I built various typeof projects with Javascript, React, Redux, NodeJS, ExpressJS, MongoDB, MySQL, Firebase, Bootstrap, TailwindCSS, Material UI and so on.</p>
                 </div>
 
                 <div>
@@ -70,7 +70,7 @@ export default function Projects() {
                             <TabPanel key={value} value={value}>
                                 
                                 {/* projects grid */}
-                                <div className='container mx-auto py-10 items-center justify-center gap-3 grid grid-cols-1 md:grid-cols-3'>
+                                <div className='container grid items-center justify-center grid-cols-1 gap-3 py-10 mx-auto md:grid-cols-3'>
                                     {
                                         // rendering all projects here
                                         value === 'all' ? 
@@ -128,7 +128,7 @@ export default function Projects() {
 }
 
 
-{/* <div key={project._id} className='bg-gray-100 rounded-xl p-4 m-2'>
+{/* <div key={project._id} className='p-4 m-2 bg-gray-100 rounded-xl'>
     <div className='text-xl font-bold'>{project.name}</div>
     <div className='text-md'>{project.description}</div>
     <div className='text-md'>{project.createdAt}</div>

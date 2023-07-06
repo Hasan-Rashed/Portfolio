@@ -8,6 +8,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AddIcon from '@mui/icons-material/Add';
+import TableViewIcon from '@mui/icons-material/TableView';
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo1.svg";
@@ -30,7 +31,7 @@ function classNames(...classes) {
 }
 
 export default function Header() {
-  // get user info from redux store
+  // getting user info from the auth state in local storage
   const { userInfo } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
@@ -157,6 +158,22 @@ export default function Header() {
                                   </a>
                                 )}
                               </Menu.Item>
+
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <a
+                                    className={classNames(
+                                      active ? "bg-gray-100" : "",
+                                      "block px-4 py-2 text-sm text-gray-700"
+                                    )}
+                                  >
+                                    <Link to="/crud">
+                                      All Projects<TableViewIcon />
+                                    </Link>
+                                  </a>
+                                )}
+                              </Menu.Item>
+
                               <Menu.Item>
                                 {({ active }) => (
                                   <a
@@ -215,7 +232,7 @@ export default function Header() {
                   ) : (
                     <>
                       <LoginModal />
-                      {/* <div className='grid grid-cols-1 md:grid-cols-2 py-2 md:py-0'>
+                      {/* <div className='grid grid-cols-1 py-2 md:grid-cols-2 md:py-0'>
                                     <SignUpModal />
                                 </div> */}
                     </>
