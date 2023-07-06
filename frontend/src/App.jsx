@@ -34,6 +34,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import PrivateRoute from './components/PrivateRoute';
 import CreateProjectScreen from './screens/CreateProjectScreen'
 import CRUDTableScreen from './screens/CRUDTable'
+import SingleProjectScreen from './screens/SingleProjectScreen'
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
           <Route path="/about" element={<AboutScreen />} />
           <Route path="/projects" element={<ProjectsScreen />} />
           <Route path="/contact" element={<ContactScreen />} />
+          <Route path="/projects/:id" element={<SingleProjectScreen />} />
           <Route path='*' element={<PageNotFound />} />
 
           {/* Private Routes */}

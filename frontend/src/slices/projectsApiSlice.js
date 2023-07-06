@@ -18,10 +18,18 @@ export const projectsApiSlice = apiSlice.injectEndpoints({
             method: "GET",
             }),
         }),
+
+        getSingleProject: builder.query({
+            query: (id) => ({
+                url: `${PROJECTS_URL}/${id}`,
+                method: "GET",
+            }),
+        }),
 })
 });
 
 export const {
     useCreateProjectMutation,
     useGetProjectsQuery,
+    useGetSingleProjectQuery,
 } = projectsApiSlice;

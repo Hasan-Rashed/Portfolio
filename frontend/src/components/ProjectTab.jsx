@@ -31,7 +31,7 @@ const ProjectTab = ({ project }) => {
                 
                 <CardFooter className="pt-0 flex justify-around">
                     <Button><Link to={project.liveLink} >Visit Project</Link></Button>
-                    <Button><Link to="/projects/:id" >Details</Link></Button>
+                    <Button><Link to={`${project._id}`} >Details</Link></Button>
                 </CardFooter>
             </Card>
         </div>
