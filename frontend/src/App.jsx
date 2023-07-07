@@ -69,7 +69,7 @@ function App() {
           <Route path='' element={<PrivateRoute />}>
             <Route path="/profile" element={<ProfileScreen />} /> {/* this is a private route */}
             <Route path="/createProject" element={<CreateProjectScreen />} /> {/* this is a private route */}
-            <Route path="/crud" element={<CRUDTableScreen />} /> {/* this is a private route */}
+            <Route path="/tablelist" element={<CRUDTableScreen />} /> {/* this is a private route */}
             <Route path="/admin/project/update/:id" element={<UpdateProjectScreen />} /> {/* this is a private route */}
           </Route>
         </Routes>
