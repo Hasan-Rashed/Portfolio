@@ -20,8 +20,8 @@ export const projectsApiSlice = apiSlice.injectEndpoints({
         }),
 
         getSingleProject: builder.query({
-            query: (id) => ({
-                url: `${PROJECTS_URL}/${id}`,
+            query: (projectId) => ({
+                url: `${PROJECTS_URL}/${projectId}`,
                 method: "GET",
             }),
         }),
@@ -33,6 +33,13 @@ export const projectsApiSlice = apiSlice.injectEndpoints({
                 body: data // data is the name, email, and password
             }),
         }),
+
+        deleteProject: builder.mutation({
+            query: (projectId) => ({
+                url: `${PROJECTS_URL}/${projectId}`,
+                method: "DELETE",
+            }),
+        }),
 })
 });
 
@@ -41,4 +48,5 @@ export const {
     useGetProjectsQuery,
     useGetSingleProjectQuery,
     useUpdateProjectMutation,
+    useDeleteProjectMutation,
 } = projectsApiSlice;

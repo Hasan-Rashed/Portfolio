@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { WaveLoading } from 'react-loadingg';
 import { toast } from 'react-toastify';
-import { useGetProjectsQuery } from '../slices/projectsApiSlice';
+import { useDeleteProjectMutation, useGetProjectsQuery } from '../slices/projectsApiSlice';
 
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
@@ -22,11 +22,26 @@ export default function Table() {
     // getting user info from the auth state in local storage
     const { userInfo } = useSelector((state) => state.auth);
 
+    // deleteProduct action from project api slice
+    const [deleteProject, { isLoading: loadingDelete}] = useDeleteProjectMutation(); // passing the project id to the deleteProject action in project api slice
+
     // projects info from redux store
     const { data: projects, isLoading, refetch, error } = useGetProjectsQuery();
 
 
 const TABLE_HEAD = ["Name", "ID", "User", "CreatedAt", "UpdatedAt", "Edit", "Delete"];
+
+// delete project handler
+const deleteHandler = async (projectId) => {
+    try{
+        await deleteProject(projectId);
+
+        toast.success("Project deleted successfully");
+        
+    }catch(err){
+        toast.error(err?.data?.message || err.error);
+    }
+}
  
 
   return (
@@ -107,7 +122,10 @@ const TABLE_HEAD = ["Name", "ID", "User", "CreatedAt", "UpdatedAt", "Edit", "Del
                         
                         <td className={classes}>
                             <Typography as="a"  variant="small" color="blue" className="font-medium cursor-pointer text-primary">
-                                <DeleteForeverIcon />
+
+                                {/* loader for delete */}
+                                { loadingDelete && <WaveLoading color='#0080FF' size='small' /> }
+                                <DeleteForeverIcon onClick={() => deleteHandler(project._id)} />
                             </Typography>
                         </td>
                     </tr>
