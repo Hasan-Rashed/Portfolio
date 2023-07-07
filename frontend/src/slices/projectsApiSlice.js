@@ -25,6 +25,14 @@ export const projectsApiSlice = apiSlice.injectEndpoints({
                 method: "GET",
             }),
         }),
+
+        updateProject: builder.mutation({
+            query: (data) => ({ // data is our email and password for login
+                url: `${PROJECTS_URL}/${data.projectId}`,
+                method: "PUT",
+                body: data // data is the name, email, and password
+            }),
+        }),
 })
 });
 
@@ -32,4 +40,5 @@ export const {
     useCreateProjectMutation,
     useGetProjectsQuery,
     useGetSingleProjectQuery,
+    useUpdateProjectMutation,
 } = projectsApiSlice;

@@ -35,6 +35,7 @@ import PrivateRoute from './components/PrivateRoute';
 import CreateProjectScreen from './screens/CreateProjectScreen'
 import CRUDTableScreen from './screens/CRUDTableScreen'
 import SingleProjectScreen from './screens/SingleProjectScreen'
+import UpdateProjectScreen from './screens/UpdateProjectScreen'
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
             <Route path="/profile" element={<ProfileScreen />} /> {/* this is a private route */}
             <Route path="/createProject" element={<CreateProjectScreen />} /> {/* this is a private route */}
             <Route path="/crud" element={<CRUDTableScreen />} /> {/* this is a private route */}
+            <Route path="/admin/project/update/:id" element={<UpdateProjectScreen />} /> {/* this is a private route */}
           </Route>
         </Routes>
       </Router>
