@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { useGetProjectsQuery } from '../slices/projectsApiSlice';
 
 import { Tabs, TabsHeader, TabsBody, Tab, TabPanel, } from "@material-tailwind/react";
+import Fade from 'react-reveal/Fade';
 import ProjectTab from './ProjectTab';
 
 export default function Projects() {
@@ -43,11 +44,13 @@ export default function Projects() {
             }
 
             <div className='container items-center justify-center gap-5 px-5 py-5 mx-auto text-center select-none md:py-10'>
-                <div className='pt-2 pb-5 text-gray-800'>
-                    <h3 className='text-xl font-semibold'>My Projects</h3>
-                    <p className='leading-3 opacity-80'>Recent Works</p>
-                    <p className='py-5 text-justify text-gray-800 opacity-80 md:text-center'>I built various typeof projects with Javascript, React, Redux, NodeJS, ExpressJS, MongoDB, MySQL, Firebase, Bootstrap, TailwindCSS, Material UI and so on.</p>
-                </div>
+                 <Fade bottom>
+                    <div className='pt-2 pb-5 text-gray-800'>
+                        <h3 className='text-xl font-semibold'>My Projects</h3>
+                        <p className='leading-3 opacity-80'>Recent Works</p>
+                        <p className='py-5 text-justify text-gray-800 opacity-80 md:text-center'>I built various typeof projects with Javascript, React, Redux, NodeJS, ExpressJS, MongoDB, MySQL, Firebase, Bootstrap, TailwindCSS, Material UI and so on.</p>
+                    </div>
+                 </Fade>
 
                 <div>
                     <Tabs id="custom-animation" value="all">

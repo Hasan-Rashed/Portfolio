@@ -21,7 +21,7 @@ const ProjectTab = ({ project }) => {
                     <Typography>
                         {
                             project.technology.map((tech) => (
-                                <span key={tech} className="text-blue-gray-500 inline-flex items-center justify-center py-2 px-3 rounded-lg bg-blue-gray-50">
+                                <span key={tech} className="inline-flex items-center justify-center px-3 py-1 rounded-lg text-blue-gray-500 bg-blue-gray-50">
                                     {tech}
                                 </span>
                             ))
@@ -29,7 +29,7 @@ const ProjectTab = ({ project }) => {
                     </Typography>
                 </CardBody>
                 
-                <CardFooter className="pt-0 flex justify-around">
+                <CardFooter className="flex justify-around pt-0">
                     <Button><Link to={project.liveLink} >Visit Project</Link></Button>
                     <Button><Link to={`${project._id}`} >Details</Link></Button>
                 </CardFooter>
