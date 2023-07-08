@@ -43,7 +43,7 @@ export default function Projects() {
                 </div>
             }
 
-            <div className='container items-center justify-center gap-5 px-5 py-5 mx-auto text-center select-none md:py-10'>
+            <div className='container items-center justify-center gap-5 px-5 py-5 mx-auto text-center mb-auto select-none md:py-10'>
                  <Fade bottom>
                     <div className='pt-2 pb-5 text-gray-800'>
                         <h3 className='text-xl font-semibold'>My Projects</h3>

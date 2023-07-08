@@ -57,7 +57,7 @@ const deleteHandler = async (projectId) => {
                 </div>
             }
         
-    <div className="container items-center justify-center py-5 mx-auto text-center select-none">
+    <div className="container items-center justify-center py-5 mx-auto text-center mb-auto select-none">
 
         <Card className="w-full h-full overflow-scroll">
         <table className="w-full text-left table-auto min-w-max">

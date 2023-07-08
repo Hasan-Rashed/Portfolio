@@ -6,7 +6,7 @@ import Table from "../components/Table";
 
 const CRUDTableScreen = () => {
   return (
-    <div>
+    <div className="flex flex-col h-screen">
         <PageProgress color={'skyblue'} height={3} />
         <Header />
         <Table />
