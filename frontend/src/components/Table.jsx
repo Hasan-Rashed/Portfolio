@@ -9,7 +9,11 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 import { Card, Typography } from "@material-tailwind/react";
- 
+
+
+import { Fragment, useState } from "react";
+import { Button, Dialog, DialogHeader, DialogBody, DialogFooter, } from "@material-tailwind/react";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 export default function Table() {
@@ -29,11 +33,18 @@ export default function Table() {
     const { data: projects, isLoading, refetch, error } = useGetProjectsQuery();
 
 
+    const [open, setOpen] = useState(false);
+ 
+    const handleOpen = () => setOpen(!open);
+
+
 const TABLE_HEAD = ["Name", "ID", "User", "CreatedAt", "UpdatedAt", "Edit", "Delete"];
 
 // delete project handler
 const deleteHandler = async (projectId) => {
     try{
+        setOpen(!open); // close the dialog box after clicking confirm
+        
         await deleteProject(projectId);
 
         toast.success("Project deleted successfully");
@@ -125,7 +136,43 @@ const deleteHandler = async (projectId) => {
 
                                 {/* loader for delete */}
                                 { loadingDelete && <WaveLoading color='#0080FF' size='small' /> }
-                                <DeleteForeverIcon onClick={() => deleteHandler(project._id)} />
+                                <DeleteForeverIcon onClick={handleOpen} />
+
+                                {/* delete dialog */}
+                                <Fragment>
+                                    {/* <Button onClick={handleOpen} variant="gradient">
+                                        Open Dialog
+                                    </Button> */}
+
+                                    <Dialog
+                                        open={open}
+                                        handler={handleOpen}
+                                        animate={{
+                                        mount: { scale: 1, y: 0 },
+                                        unmount: { scale: 0.9, y: -100 },
+                                        }}
+                                    >
+                                        <DialogHeader><DeleteIcon className='mx-auto' /></DialogHeader>
+                                        <DialogBody divider className='text-center'>
+                                            Are you sure you want to delete this item?
+                                        </DialogBody>
+                                        <DialogFooter>
+                                            <Button
+                                                variant="text"
+                                                color="red"
+                                                onClick={handleOpen}
+                                                className="mr-1"
+                                            >
+                                                <span>Cancel</span>
+                                            </Button>
+                                            <Button variant="gradient" onClick={() => deleteHandler(project._id)}>
+                                                <span>Confirm</span>
+                                            </Button>
+                                        </DialogFooter>
+                                    </Dialog>
+
+                                </Fragment>
+
                             </Typography>
                         </td>
                     </tr>
