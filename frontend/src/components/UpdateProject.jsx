@@ -69,7 +69,7 @@ const UpdateProject = () => {
 
                 toast.success("Project updated successfully");
 
-                navigate('/projectlist');
+                navigate('/tablelist');
 
             } catch (err) {
                 toast.error(err?.data?.message || err?.error);

@@ -46,7 +46,7 @@ const SingleProject = () => {
 
             <Fade left>
                 <div className='py-5'>
-                    <img src={`${project?.image}`} alt={`${project?.name} image`} className="object-cover w-full rounded-lg shadow-lg h-96" />
+                    <img src={`${project?.image}`} alt={`${project?.name} image`} className="object-cover w-full rounded-lg shadow-lg" />
                 </div>
             </Fade>
 
