@@ -9,9 +9,9 @@ const ProjectTab = ({ project }) => {
         {/* here is can access project.name project.description, project.createdAt, project._id, project.updatedAt */}
         
         <div>
-            <Card className="mt-6 shadow-lg">
-                <CardHeader color="blue-gray" className="relative">
-                    <img src={project.image} alt={`${project.name} image`} layout="fill" />
+            <Card className="mt-6 shadow-lg card">
+                <CardHeader color="blue-gray" className="relative image-container">
+                    <img src={project.image} alt={`${project.name} image`} className='image' layout="fill" />
                 </CardHeader>
                 <CardBody>
                     <Typography variant="h6" color="blue-gray" className="mb-2">

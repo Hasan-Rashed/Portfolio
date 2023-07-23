@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card {
+    /* width: 300px; */
+    height: 400px;
+    /* overflow: hidden; */
+    /* border: 1px solid #ccc; */
+    position: relative;
+  }
+  
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    /* height: 60%; */
+    transition: height 0.3s ease;
+  }
+  
+  .image {
+    /* width: 100%; */
+    /* height: auto; */
+    transition: transform 7s ease;
+  }
+  
+  .card:hover .image-container {
+    height: 100%;
+  }
+  
+  .card:hover .image {
+    transform: translateY(-78%);
+  }
