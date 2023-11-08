@@ -11,12 +11,12 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 const AboutHero = () => {
   return (
     <div className='bg-gray-200 select-none'>
-        <div className="container mx-auto px-5 items-center justify-center py-10 text-start grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="container grid items-center justify-center grid-cols-1 gap-5 px-5 py-10 mx-auto text-start md:grid-cols-2">
           <LightSpeed left>
               <div>
                 <strong className='py-1 text-gray-800'>Hi, I am Rashed.</strong>
                 <p className='py-3 text-gray-800'>A Passionate Web developer and dedicated to my work. I am curious about the new technologies and like to learn from the core. I love to develop web applications with modern technologies like Javascript, ReactJS, NodeJs and so on.</p>
-                <span className='text-gray-800 py-3'>My big power is I'm a hard-worker, self-motivated and quick learner, I always think positive manner and I learn from my mistakes. And I always ready to learn and adapt to new things.</span>
+                <span className='py-3 text-gray-800'>My big power is I'm a hard-worker, self-motivated and quick learner, I always think positive manner and I learn from my mistakes. And I always ready to learn and adapt to new things.</span>
 
                 {/* <div className='py-2'>
                   <strong className='block'>- Web Development</strong>
@@ -27,12 +27,12 @@ const AboutHero = () => {
 
                 <div className='py-5 mx-auto'>
                   <Button variant="contained" startIcon={<CloudDownloadIcon />}>
-                    <Link to='/cv' >Download CV</Link>
+                    <Link to='https://drive.google.com/file/d/1sZ6NpKE5wmqAPtnx29iKXocbXm6NCpgm/view?usp=sharing' >Download CV</Link>
                   </Button>
                 </div>
 
                   {/* all links */}
-                  <div className="flex justify-center  text-black">
+                  <div className="flex justify-center text-black">
                   <Link to='https://github.com/Hasan-Rashed' className="p-4">
                       <GitHubIcon className="animate-pulse hover:animate-bounce"/>
                   </Link>
