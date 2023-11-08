@@ -34,7 +34,7 @@ const Hero = () => {
                         </p>
                     </div>
                     <div className='hidden md:inline-block'>
-                        <img src={developer} className='w-auto rounded-md' alt="developer" />
+                        <img src={developer} className='w-auto mx-2 rounded-md' alt="developer" />
                     </div>
                 </div>
         </div>
