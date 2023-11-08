@@ -1,4 +1,4 @@
-import me from '../assets/mer.png';
+import me from '../assets/Rashed.jpg';
 import LightSpeed from 'react-reveal/LightSpeed';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
