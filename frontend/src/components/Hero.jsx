@@ -1,5 +1,5 @@
 import { Typewriter } from 'react-simple-typewriter'
-import developer from '../assets/developer activity.svg'
+import developer from '../assets/Rashed.jpg'
 
 
 const Hero = () => {
@@ -34,7 +34,7 @@ const Hero = () => {
                         </p>
                     </div>
                     <div className='hidden md:inline-block'>
-                        <img src={developer} className='w-96' alt="developer" />
+                        <img src={developer} className='w-auto rounded-md' alt="developer" />
                     </div>
                 </div>
         </div>
