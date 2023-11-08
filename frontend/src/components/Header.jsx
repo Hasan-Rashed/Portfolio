@@ -12,7 +12,7 @@ import TableViewIcon from '@mui/icons-material/TableView';
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo1.svg";
-import rashedImg from "../assets/rashed.png";
+import rashedImg from "../assets/RashedDp.JPG";
 
 import { WaveLoading } from "react-loadingg";
 import { toast } from "react-toastify";
